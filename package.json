@@ -1,0 +1,14 @@
+{
+  "name": "jdocs-css",
+  "version": "0.5.0",
+  "description": "基於 UnoCSS 的 Just the Docs 主題",
+  "scripts": {
+    "build": "unocss \"src/**/*.html\" -o dist/jdocs.css"
+  },
+  "devDependencies": {
+    "@unocss/cli": "^0.55.0",
+    "@unocss/preset-typography": "^0.55.0",
+    "@unocss/preset-uno": "^0.55.0",
+    "unocss": "^0.55.0"
+  }
+}

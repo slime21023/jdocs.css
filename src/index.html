@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just the Docs 主題示例</title>
+  
+  <!-- 引入 UnoCSS 編譯後的樣式 -->
+  <link rel="stylesheet" href="../dist/jdocs.css">
+</head>
+<body class="bg-white text-bodyText">
+  <!-- 深色模式切換按鈕 -->
+  <button id="theme-toggle" class="btn-outline fixed top-4 right-4 z-50">
+    切換深色模式
+  </button>
+
+  <!-- 側邊欄 -->
+  <nav class="sidebar">
+    <h1 class="text-xl font-bold text-primary mb-4">Just the Docs</h1>
+    <ul class="list-none p-0">
+      <li class="sidebar-item"><a href="#" class="nav-link-active">首頁</a></li>
+      <li class="sidebar-item"><a href="about.html" class="nav-link">關於我們</a></li>
+      <li class="sidebar-item"><a href="guide.html" class="nav-link">指南</a></li>
+      <li class="sidebar-item"><a href="api.html" class="nav-link">API 參考</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主內容區 -->
+  <main class="content-with-sidebar main-content">
+    <h1 class="heading text-3xl">Just the Docs 主題</h1>
+    <p>這是一個基於 UnoCSS 的 Just the Docs 主題示例，展示如何使用 UnoCSS 來模仿 Just the Docs 的樣式設計。</p>
+
+    <h2 class="heading text-2xl">按鈕示例</h2>
+    <button class="btn-primary">主要按鈕</button>
+    <button class="btn-outline">次要按鈕</button>
+
+    <h2 class="heading text-2xl">表格示例</h2>
+    <table class="docs-table">
+      <thead>
+        <tr>
+          <th class="table-cell table-header">名稱</th>
+          <th class="table-cell table-header">描述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="table-cell">按鈕</td>
+          <td class="table-cell">用於觸發操作的元件</td>
+        </tr>
+        <tr>
+          <td class="table-cell">表格</td>
+          <td class="table-cell">用於顯示結構化數據</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="heading text-2xl">代碼塊示例</h2>
+    <pre class="code-block">
+<code>npm install unocss</code>
+    </pre>
+  </main>
+
+  <!-- 深色模式切換腳本 -->
+  <script>
+    // 初始化主題
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.getElementById('theme-toggle').textContent = '切換淺色模式';
+    } else {
+      document.getElementById('theme-toggle').textContent = '切換深色模式';
+    }
+
+    // 切換主題
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      document.getElementById('theme-toggle').textContent = isDark ? '切換淺色模式' : '切換深色模式';
+    });
+  </script>
+</body>
+</html>
