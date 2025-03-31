@@ -3,80 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just the Docs 主題示例</title>
-  
-  <!-- 引入 UnoCSS 編譯後的樣式 -->
-  <link rel="stylesheet" href="../dist/jdocs.css">
+  <title>Just the Docs - 首頁</title>
+  <link rel="stylesheet" href="jdocs.css">
 </head>
-<body class="bg-white text-bodyText">
-  <!-- 深色模式切換按鈕 -->
-  <button id="theme-toggle" class="btn-outline fixed top-4 right-4 z-50">
-    切換深色模式
-  </button>
+<body>
+  <div class="sidebar">
+    <div class="site-title">
+      <a href="index.html">Just the Docs</a>
+      <p>使用 UnoCSS 構建</p>
+    </div>
+    
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">首頁</a></li>
+        <li><a href="about.html">關於</a></li>
+      </ul>
+    </nav>
+  </div>
 
-  <!-- 側邊欄 -->
-  <nav class="sidebar">
-    <h1 class="text-xl font-bold text-primary mb-4">Just the Docs</h1>
-    <ul class="list-none p-0">
-      <li class="sidebar-item"><a href="#" class="nav-link-active">首頁</a></li>
-      <li class="sidebar-item"><a href="about.html" class="nav-link">關於我們</a></li>
-      <li class="sidebar-item"><a href="guide.html" class="nav-link">指南</a></li>
-      <li class="sidebar-item"><a href="api.html" class="nav-link">API 參考</a></li>
-    </ul>
-  </nav>
+  <div class="main">
+    <div class="main-header">
+      <div class="breadcrumb">
+        <a href="index.html">首頁</a> / 快速開始
+      </div>
+      <h1>快速開始</h1>
+    </div>
 
-  <!-- 主內容區 -->
-  <main class="content-with-sidebar main-content">
-    <h1 class="heading text-3xl">Just the Docs 主題</h1>
-    <p>這是一個基於 UnoCSS 的 Just the Docs 主題示例，展示如何使用 UnoCSS 來模仿 Just the Docs 的樣式設計。</p>
+    <div class="content">
+      <section>
+        <h2>安裝</h2>
+        <p>使用 UnoCSS 構建 Just the Docs 的樣式非常簡單。</p>
+        <pre><code>npm install -D unocss</code></pre>
+      </section>
+      
+      <section>
+        <h2>配置</h2>
+        <p>在 <code>uno.config.js</code> 文件中定義樣式規則。</p>
+        <p>示範表格：</p>
+        <table>
+          <thead>
+            <tr>
+              <th>參數</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>rules</td>
+              <td>樣式規則定義</td>
+            </tr>
+            <tr>
+              <td>shortcuts</td>
+              <td>樣式快捷方式</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <section>
+        <h2>清單示範</h2>
+        <ul>
+          <li>基本項目</li>
+          <li>嵌套項目
+            <ul>
+              <li>次級項目</li>
+              <li>次級項目</li>
+            </ul>
+          </li>
+          <li>最後項目</li>
+        </ul>
+      </section>
+    </div>
 
-    <h2 class="heading text-2xl">按鈕示例</h2>
-    <button class="btn-primary">主要按鈕</button>
-    <button class="btn-outline">次要按鈕</button>
-
-    <h2 class="heading text-2xl">表格示例</h2>
-    <table class="docs-table">
-      <thead>
-        <tr>
-          <th class="table-cell table-header">名稱</th>
-          <th class="table-cell table-header">描述</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="table-cell">按鈕</td>
-          <td class="table-cell">用於觸發操作的元件</td>
-        </tr>
-        <tr>
-          <td class="table-cell">表格</td>
-          <td class="table-cell">用於顯示結構化數據</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2 class="heading text-2xl">代碼塊示例</h2>
-    <pre class="code-block">
-<code>npm install unocss</code>
-    </pre>
-  </main>
-
-  <!-- 深色模式切換腳本 -->
-  <script>
-    // 初始化主題
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-      document.getElementById('theme-toggle').textContent = '切換淺色模式';
-    } else {
-      document.getElementById('theme-toggle').textContent = '切換深色模式';
-    }
-
-    // 切換主題
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      document.getElementById('theme-toggle').textContent = isDark ? '切換淺色模式' : '切換深色模式';
-    });
-  </script>
+    <footer>
+      <p>© 2025 Just the Docs UnoCSS</p>
+    </footer>
+  </div>
 </body>
 </html>

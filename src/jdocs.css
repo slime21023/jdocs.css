@@ -1,0 +1,7 @@
+/* layer: default */
+.sidebar{width:250px;padding:2rem 1rem;background-color:var(--sidebar);border-right:1px solid var(--border);flex-shrink:0;overflow-y:auto;height:100vh;position:sticky;top:0;}
+.site-title{margin-bottom:2rem;}
+.main{flex:1;max-width:900px;padding:2rem;overflow-x:auto;}
+.main-header{margin-bottom:2.5rem;}
+.breadcrumb{font-size:0.875rem;margin-bottom:0.5rem;color:var(--textLight);}
+.content{max-width:800px;}

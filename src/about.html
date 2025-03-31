@@ -3,49 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>關於我們 - Just the Docs 主題</title>
-  
-  <!-- 引入 UnoCSS 編譯後的樣式 -->
-  <link rel="stylesheet" href="../dist/jdocs.css">
+  <title>Just the Docs - 關於</title>
+  <link rel="stylesheet" href="jdocs.css">
 </head>
-<body class="bg-white text-bodyText">
-  <!-- 深色模式切換按鈕 -->
-  <button id="theme-toggle" class="btn-outline fixed top-4 right-4 z-50">
-    切換深色模式
-  </button>
+<body>
+  <div class="sidebar">
+    <div class="site-title">
+      <a href="index.html">Just the Docs</a>
+      <p>使用 UnoCSS 構建</p>
+    </div>
+    
+    <nav>
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html" aria-current="page">關於</a></li>
+      </ul>
+    </nav>
+  </div>
 
-  <!-- 側邊欄 -->
-  <nav class="sidebar">
-    <h1 class="text-xl font-bold text-primary mb-4">Just the Docs</h1>
-    <ul class="list-none p-0">
-      <li class="sidebar-item"><a href="index.html" class="nav-link">首頁</a></li>
-      <li class="sidebar-item"><a href="about.html" class="nav-link-active">關於我們</a></li>
-      <li class="sidebar-item"><a href="guide.html" class="nav-link">指南</a></li>
-      <li class="sidebar-item"><a href="api.html" class="nav-link">API 參考</a></li>
-    </ul>
-  </nav>
+  <div class="main">
+    <div class="main-header">
+      <div class="breadcrumb">
+        <a href="index.html">首頁</a> / 關於
+      </div>
+      <h1>關於我們</h1>
+    </div>
 
-  <!-- 主內容區 -->
-  <main class="content-with-sidebar main-content">
-    <h1 class="heading text-3xl">關於我們</h1>
-    <p>這是一個關於我們的頁面，展示 Just the Docs 主題的多頁面結構。</p>
-  </main>
+    <div class="content">
+      <section>
+        <p>Just the Docs 是一個現代化的技術文檔主題，專為清晰、簡潔的文檔設計。</p>
+        <blockquote>
+          <p>我們使用 UnoCSS 來構建樣式，確保樣式輕量且可擴展。</p>
+        </blockquote>
+      </section>
+      
+      <section>
+        <h2>聯絡我們</h2>
+        <p>如果您有任何問題，請通過以下方式聯絡我們：</p>
+        <ul>
+          <li>Email: <a href="mailto:support@justthedocs.com">support@justthedocs.com</a></li>
+          <li>GitHub: <a href="https://github.com/justthedocs">https://github.com/justthedocs</a></li>
+        </ul>
+      </section>
+    </div>
 
-  <!-- 深色模式切換腳本 -->
-  <script>
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-      document.getElementById('theme-toggle').textContent = '切換淺色模式';
-    } else {
-      document.getElementById('theme-toggle').textContent = '切換深色模式';
-    }
-
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      document.getElementById('theme-toggle').textContent = isDark ? '切換淺色模式' : '切換深色模式';
-    });
-  </script>
+    <footer>
+      <p>© 2025 Just the Docs UnoCSS</p>
+    </footer>
+  </div>
 </body>
 </html>

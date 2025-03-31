@@ -3,7 +3,8 @@
   "version": "0.5.0",
   "description": "基於 UnoCSS 的 Just the Docs 主題",
   "scripts": {
-    "build": "unocss \"src/**/*.html\" -o dist/jdocs.css"
+    "build": "unocss 'src/**/*.html' -o dist/jdocs.css",
+    "build:dev": "unocss 'src/**/*.html' -o src/jdocs.css"
   },
   "devDependencies": {
     "@unocss/cli": "^0.55.0",
